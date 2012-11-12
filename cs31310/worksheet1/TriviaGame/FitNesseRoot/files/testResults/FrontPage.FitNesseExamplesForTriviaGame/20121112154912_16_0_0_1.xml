@@ -1,0 +1,145 @@
+<?xml version="1.0"?>
+<testResults>
+  <FitNesseVersion>v20111026</FitNesseVersion>
+  <rootPath>FitNesseExamplesForTriviaGame</rootPath>
+    <result>
+    <counts>
+      <right>16</right>
+      <wrong>0</wrong>
+      <ignores>0</ignores>
+      <exceptions>1</exceptions>
+    </counts>
+    <runTimeInMillis>10</runTimeInMillis>
+    <content><![CDATA[<span class="meta">classpath: /home/dan/uni/assignments/cs31310/worksheet1/TriviaGame/bin/</span><br/><div class="toc1">
+	<div class="contents">
+		<b>Contents:</b>
+		<ul/>
+	</div>
+</div>
+<br/><table border="1" cellspacing="0">
+	<tr>
+		<td colspan="3">eg.game.fixtures.AddRemovePlayerFixture</td>
+	</tr>
+	<tr>
+		<td>playerName</td>
+		<td>addPlayer?</td>
+		<td>countPlayers?</td>
+	</tr>
+	<tr>
+		<td>Freya</td>
+		<td class="pass">true</td>
+		<td class="pass">1</td>
+	</tr>
+	<tr>
+		<td>Eir</td>
+		<td class="pass">true</td>
+		<td class="pass">2</td>
+	</tr>
+	<tr>
+		<td>Tyr</td>
+		<td class="pass">true</td>
+		<td class="pass">3</td>
+	</tr>
+</table>
+<br/><table border="1" cellspacing="0">
+	<tr>
+		<td colspan="3">eg.game.fixtures.GameTurnFixture</td>
+	</tr>
+	<tr>
+		<td>roll</td>
+		<td>player?</td>
+		<td>gameHasStarted?</td>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td class="pass">Freya</td>
+		<td class="pass">true</td>
+	</tr>
+	<tr>
+		<td>3</td>
+		<td class="pass">Eir</td>
+		<td class="pass">true</td>
+	</tr>
+</table>
+<br/><table border="1" cellspacing="0">
+	<tr>
+		<td colspan="3">eg.game.fixtures.AddRemovePlayerFixture</td>
+	</tr>
+	<tr>
+		<td>playerName</td>
+		<td>addPlayer?</td>
+		<td>countPlayers?</td>
+	</tr>
+	<tr>
+		<td>Tyr</td>
+		<td class="pass">false</td>
+		<td class="pass">3</td>
+	</tr>
+	<tr>
+		<td>Thor</td>
+		<td class="pass">false</td>
+		<td class="pass">3</td>
+	</tr>
+</table>
+<br/><table border="1" cellspacing="0">
+	<tr>
+		<td colspan="4">eg.game.fixtures.AddRemovePlayerFixture</td>
+	</tr>
+	<tr>
+		<td>playerName</td>
+		<td>removePlayer?</td>
+		<td>removePlayerHideException?</td>
+		<td>countPlayers?</td>
+	</tr>
+	<tr>
+		<td>Tyr</td>
+		<td class="error">false<hr><pre><div class="fit_stacktrace">eg.game.GameException: The game has already started
+	at eg.game.Game.removePlayer(Game.java:29)
+	at eg.game.fixtures.AddRemovePlayerFixture.removePlayer(AddRemovePlayerFixture.java:32)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at fit.TypeAdapter.invoke(TypeAdapter.java:109)
+	at fit.TypeAdapter.get(TypeAdapter.java:97)
+	at fit.Fixture$CellComparator.compareCellToResult(Fixture.java:371)
+	at fit.Fixture$CellComparator.access$100(Fixture.java:357)
+	at fit.Fixture.compareCellToResult(Fixture.java:299)
+	at fit.Fixture.check(Fixture.java:295)
+	at fit.ColumnFixture.check(ColumnFixture.java:51)
+	at fit.Binding$QueryBinding.doCell(Binding.java:215)
+	at fit.ColumnFixture.doCell(ColumnFixture.java:37)
+	at fit.Fixture.doCells(Fixture.java:171)
+	at fit.Fixture.doRow(Fixture.java:165)
+	at fit.ColumnFixture.doRow(ColumnFixture.java:25)
+	at fit.Fixture.doRows(Fixture.java:159)
+	at fit.ColumnFixture.doRows(ColumnFixture.java:18)
+	at fit.Fixture.doTable(Fixture.java:153)
+	at fit.Fixture.interpretFollowingTables(Fixture.java:119)
+	at fit.Fixture.interpretTables(Fixture.java:105)
+	at fit.Fixture.doTables(Fixture.java:79)
+	at fit.FitServer.process(FitServer.java:81)
+	at fit.FitServer.run(FitServer.java:56)
+	at fit.FitServer.main(FitServer.java:41)
+</div></pre></td>
+		<td class="pass">false</td>
+		<td class="pass">3</td>
+	</tr>
+</table>
+]]></content>
+    <relativePageName>FitNesseExamplesForTriviaGame</relativePageName>
+    
+    
+    
+  </result>
+  
+    <finalCounts>
+    <right>0</right>
+    <wrong>0</wrong>
+    <ignores>0</ignores>
+    <exceptions>0</exceptions>
+  </finalCounts>
+  <totalRunTimeInMillis>0</totalRunTimeInMillis>
+  
+</testResults>
+

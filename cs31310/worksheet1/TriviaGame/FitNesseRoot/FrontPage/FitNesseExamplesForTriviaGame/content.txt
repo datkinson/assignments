@@ -1,0 +1,21 @@
+!path /home/dan/uni/assignments/cs31310/worksheet1/TriviaGame/bin/
+!contents -R2 -g -p -f -h
+!|eg.game.fixtures.AddRemovePlayerFixture|
+|playerName|addPlayer?|countPlayers?|
+|Freya|true|1|
+|Eir|true|2|
+|Tyr|true|3|
+
+!|eg.game.fixtures.GameTurnFixture|
+|roll|player?|gameHasStarted?|
+|1|Freya|true|
+|3|Eir|true|
+
+!|eg.game.fixtures.AddRemovePlayerFixture|
+|playerName|addPlayer?|countPlayers?|
+|Tyr|false|3|
+|Thor|true|3|
+
+!|eg.game.fixtures.AddRemovePlayerFixture|
+|playerName|removePlayer?|removePlayerHideException?|countPlayers?|
+|Tyr|error|false|3|

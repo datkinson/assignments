@@ -1,0 +1,6 @@
+!3 !-fit-!
+|'''Date: '''|!-3:50:16 PM (GMT) on Monday, November 12, 2012-!|
+|'''Test Page: '''|.FrontPage.FitNesseExamplesForTriviaGame|
+|'''Command: '''|!-java -cp fitnesse.jar:/home/dan/uni/assignments/cs31310/worksheet1/TriviaGame/bin/ fit.FitServer Tasa 8080 10-!|
+|'''Exit code: '''|!-1-!|
+|'''Time elapsed: '''|!-0.381 seconds-!|
