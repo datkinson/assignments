@@ -1,0 +1,138 @@
+% Type of the document is an article
+\documentclass{article}
+\usepackage{fullpage}
+% begin the document
+\begin{document}
+
+% give the document a title
+\title{CS35710 Ubiquitous Computing exam notes}
+
+% list the author of the document
+\author{Daniel Atkinson}
+
+% print the title, author, etc... here
+\maketitle
+
+\section{Scenario}
+\subsection{Outline}
+The Government and the farming industry are planning to start a pilot study to allow the tracking of sheep during their lifetime.  All sheep farms currently maintain a holding register and information about sheep moving onto and off of the farm.  The government want to use the tracking system to monitor sheep movements, so that in the event of a disease outbreak they can determine which sheep have mixed together over a period of time.  The system will also keep track of which animals have been treated with medicines and which ones have been treated against parasites.
+\\The pilot study will start with two adjacent farms located in Ceredigion.
+\subsection{Requirements}
+\begin{itemize}
+\item Sheep need to be tracked arriving and leaving the farm
+\\Being bought/sold or being born/death.
+\item Request status of all sheep
+\\The Government wants to be able to request all details of all sheep and must be available no later than 2 hours after the request has been made.
+\\Sheep that left the farm must also remain on the system for records.
+\item Location of each sheep in the field
+\item Which field a sheep is in
+\item identify holes in the fence
+\\note: each field is a different size
+\item Farmers visit the fields twice a day on average to take food anf water.
+\item Display movements of sheep over the past week on a map.
+\end{itemize}
+\subsection{Alerts}
+\begin{itemize}
+\item If a sheep has not been detected for a specified number of hours
+\item A sheep has entered an area known to used to lambing and has stayed there for a period of time.  This might help indicate when sheep are due to give birth.
+\item A sheep from the neighbouring farm has been detected on the farm.  The two farms keep different breeds and the farmers dont want any cross breeding.  They want early detection so that they can remove sheep.
+\item A sheep is no visiting the feeding/watering area regularly.  This may be a sign of illness.
+\end{itemize}
+
+The farms have wireless networks that cover the main farm buildings on each farm, but the networks do not cover all fo the farm land.  There is a mobile phone coverage across the area, but it is patchy and intermittent in places.
+
+\section{Solution}
+\subsection{Server}
+\begin{itemize}
+\item Located in main farm building.
+\item Runs a database.
+\item Connected directly to router/internet
+\item Centralised processing
+\item Web interface for farmer interaction (requires another device with a web browser to access interface)
+\item Wires extension to an xbee relay by the fields
+\item 1TB hard drive for storage. Excessive amount due to storage being cheap
+\end{itemize}
+
+\subsection{Sheep device}
+\begin{itemize}
+\item zigbee radio
+\item Litium Polymer battery (XMah)
+\item Possibly an arduino pro micro
+\end{itemize}
+
+\subsection{Fence Device}
+\begin{itemize}
+\item zigbee radio
+\item Lithium polymer battery (smaller than sheep ones)
+\item Mains supply as it is a fixed device
+\item Used as a known point of reference for localising the sheep
+\end{itemize}
+
+\subsection{Data}
+\begin{itemize}
+\item Sheep ID (possibly the same as its rfid tag)
+\item Peers in range
+\item Peer signal strength
+\item Data sent through mesh network to router node
+\item Data sent from router node to central server for processing
+\item Stored on central server database
+\end{itemize}
+
+\subsection{Notes}
+\begin{itemize}
+\item Angle of arrival
+\item Time difference
+\item Signal strength
+\\3 Methods of localisation
+\item RSSI - recieved signal strength indication is the best method due to no extra hardware being required and have a much lower power requirement
+\\This is done by knowing the original signal strength (standard for all devices used) and how the signal degrades (power propagation loss model).
+\\The disadvantage to this method is that objects in the environment can disrupt the signals causing inaccurate readings, such as the other sheep.
+\end{itemize}
+\subsection{Specs}
+\subsubsection{Jennic JN5139 Zigbee module}
+Jennic JN5139 ZigBee Microcontroller
+\begin{itemize}
+\item 2.4GHz IEEE802.15.4compliant transceiver
+\item Wireless ZigBee stack with AES Security
+\item Deep sleep current <0.4uA
+\item 32-bit RISC low power processor
+\item Sleep current 2.6 microA
+\item TX current 37mA
+\item RC current 37mA
+\item 18x30mm size
+\item 1km range with external antena
+\item typical 400ft
+\end{itemize}
+
+\subsubsection{Battery}
+2000mAh Lithium Polymer battery
+\begin{itemize}
+\item 2000milli amp hour capacity
+\item 3.7 volt output
+\item weighs 36 grams (1.27 ounces)
+\item -25 -> +60degrees operating temperature
+\item 5.8 x 54 x 54mm size
+\end{itemize}
+
+\subsection{Costs}
+\begin{itemize}
+\item JN5139 zigbee/microcontroler unit 25 Euro for single unit but bulk discount to 20 Euro per 100 units at mouser.com
+\\The Jennic JN5139 ZigBee Module with ceramic antenna JN5139-Z01-M00R1T is also available at industrialinterface.co.uk for £21.47 per unit.
+\item Polymer Lithium Ion Battery - 2000mAh
+\\£10.88 from sparkfun electronics
+\\6Ah version for £25
+\item ASROCK ION3D152D/B Nettop PC
+\\Could be used as the server, small at 195x70x186mm
+\\2GB RAM, Intel Atom processor for low power, dual core 1.8Ghz, plenty for the processing needed
+\\£274 from scan.co.uk
+\\comes with 320GB HDD
+\item 1TB 2.5" HDD
+\\£60 from novatech.co.uk
+\\Samsung M8 1TB 8MB Cache 5400RPM SataII
+\end{itemize}
+\subsection{Alternatives}
+GPS
+\\High power consumption and expensiveness of devices makes it impractical for monitoring sheep in a field.
+
+% end the document
+\end{document}
